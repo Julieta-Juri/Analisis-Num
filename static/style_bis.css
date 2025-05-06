@@ -1,0 +1,184 @@
+/* Botones */
+.btn-nota, .btn_atras {
+    background-color: #393939;; /* Blanco */
+    color: rgb(252, 243, 243);
+    border: none;
+    padding: 12px 24px;
+    font-size: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    transition: background-color 0.3s ease;
+    margin-left: 29%;
+}
+
+.btn-nota:hover, .btn_atras:hover {
+    background-color:#ec9062 ; /* Naranja */
+}
+
+.nota {
+    max-height: 0;
+    color: white;
+    overflow: hidden;
+    transition: max-height 0.8s ease, padding 0.5s ease;
+    background-color:#393939;
+    border-left: 5px solid #ff6600; /* Naranja */
+    margin: 20px auto;
+    padding: 0 20px;
+    border-radius: 10px;
+    box-shadow: 0 8px 15px rgba(0,0,0,1);
+    width: 80%;
+    font-size: 1.1em;
+    overflow-y: auto;
+   
+}
+
+.nota.abierta {
+    max-height: 500px;
+    padding: 20px;
+    
+
+}
+
+body {
+    background-color: #f5f5f5; /* Blanco */
+    color: #000000;
+    animation: fadeIn 2s ease-in-out;
+}
+
+h1 {
+    color: #ff6600; /* Naranja */
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 2.5rem;
+    text-shadow: 1px 1px 3px #00000060;
+    font-size: 60px;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.input {
+    background-color: #ffffff; /* Blanco */
+    color: rgb(0, 0, 0);
+    border: none;
+    padding: 12px 24px;
+    font-size: 1em;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: background-color 0.3s ease;
+}
+
+.input:hover, .btn_atras:hover, .btn_submit:hover {
+    background-color: none; /* Naranja */
+}
+
+.btn_submit {
+    padding: 0.7rem 1.2rem;
+    border: 2px solid #ff6600;
+    border-radius: 8px;
+
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn_submit:hover {
+    background-color:#ec9062 ; /* Naranja oscuro */
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.formulario {
+    background: rgba(255, 255, 255, 0.15); /* blanco con transparencia */
+    backdrop-filter: blur(10px); /* efecto vidrio esmerilado */
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 4px 12px rgba(1, 1, 1, 1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: rgb(14, 10, 10);
+}
+
+.h2_jinja {
+    font-size: 25px;
+}
+
+.numeros {
+    font-size: 15px;
+}
+
+.btn_atras {
+    padding: 0.7rem 1.2rem;
+    border: none;
+    border-radius: 8px;
+    background-color: #393939;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    margin-left: 20px;
+    font-size: 1.5rem; /* Ajusta el tamaño de la flecha */
+}
+
+.btn_atras:hover {
+    background-color:#ff6600;
+}
+
+.fas.fa-arrow-left {
+    font-size: 2rem; /* Ajusta el tamaño del icono */
+}
+
+.label {
+    font-size: 25px;
+}
+
+/* Estilo de los enlaces */
+.boton1 {
+    color: #ff6600; /* Naranja */
+    text-decoration: none;
+    padding: 10px 15px;
+    border: 1px solid #ff6600;
+    border-radius: 5px;
+}
+
+/* Cuando el ratón pasa sobre el botón */
+.boton1:hover {
+    background-color: #ec9062; /* Naranja claro */
+    color: black;
+}
+
+/* Estilo para la tarjeta */
+.metodo-card {
+    border: 2px solid #ff6600; /* Naranja */
+    border-radius: 2px;
+}
+
+/* Título de las tarjetas */
+.card-title {
+    color: black;
+    font-size: 1.5rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: bold;
+}
+
+.card-body {
+    border: transparent;
+    border-radius: 5px;
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+
+}
+
+
+/* Efecto hover en las tarjetas */
+.card:hover {
+    transform: scale(1.03);
+    transition: 0.6s ease;
+    box-shadow: 0px 0px 15px rgba(30, 26, 26, 0.2);
+}

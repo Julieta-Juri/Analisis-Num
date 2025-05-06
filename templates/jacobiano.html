@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/estilo_jac.css">
+    <title>Método de Jacobi</title>
+</head>
+<body>
+    <header>
+        <h1>Método de Jacobi</h1>
+        <a href="{{ url_for('index') }}" class="btn_atras">Atrás</a>
+    </header>
+    <div class="container">
+        <form method="POST" class="formulario">
+            <label for="A" class="label">Matriz A (Ejemplo: [[4, -1, 0], [-1, 4, -1], [0, -1, 3]]):</label> <br>
+            <input type="text" name="A" id="A" class="input" required>
+            <br><br>
+            
+            <label for="b" class="label">Vector b (Ejemplo: [15, 10, 10]):</label> <br>
+            <input type="text" name="b" id="b" class="input" required>
+            <br><br>
+            
+            <label for="tol" class="label">Tolerancia:</label> <br>
+            <input type="number" name="tol" id="tol" value="1e-10" class="input" required>
+            <br><br>
+            
+            <label for="max_iter" class="label">Máximo de Iteraciones:</label> <br>
+            <input type="number" name="max_iter" id="max_iter" value="100" class="input" required>
+            <br><br>
+            
+            <button type="submit" class="btn_submit">Calcular</button>
+            {% if resultado %}
+        <h2 class="h2_jinja">Raíz: </h2>
+            <p class="numeros">{{ resultado }}</p>
+        <h2 class="h2_jinja">Error: </h2>
+            <p class="numeros">{{ error_final }}</p>
+    {% endif %}
+        </form>
+        
+    </div>
+    <br>
+
+    <button id="mostrarNota" class="btn-nota">Guía</button>
+
+    <div id="notaImportante" class="nota">
+        <h3>📌 Guía de funciones</h3>
+        <p>Recordá escribir bien las funciones:</p>
+        <ul>
+            <li><strong>Seno:</strong> <code>sin(x)</code></li>
+            <li><strong>Coseno:</strong> <code>cos(x)</code></li>
+            <li><strong>Tangente:</strong> <code>tan(x)</code></li>
+            <li><strong>Exponencial:</strong> <code>exp(x)</code></li>
+            <li><strong>Logaritmo natural (ln):</strong> <code>log(x)</code></li>
+            <li><strong>Logaritmo base 10:</strong> <code>log10(x)</code></li>
+            <li><strong>Raíz cuadrada:</strong> <code>sqrt(x)</code></li>
+            <li><strong>Valor absoluto:</strong> <code>Abs(x)</code></li>
+            <li><strong>Potencia:</strong> <code>x**n</code> (por ejemplo: <code>x**2</code> para x al cuadrado)</li>
+        </ul>
+    
+        <h4>Importante:</h4>
+        <ul>
+            <li>Escribir CADA signo, siendo 3x, 3*x</li>
+            <li>Escribir siempre en términos de <strong>x</strong>.</li>
+            <li>Usar paréntesis correctamente.</li>
+            <li>No escribir <code>np.</code> ni otros prefijos.</li>
+            <li>Si la función involucra grados, convertir primero a radianes.</li>
+        </ul>
+    
+        <h4>Ejemplos válidos:</h4>
+        <ul>
+            <li><code>sin(x) + x**2</code></li>
+            <li><code>exp(x) - 5*x</code></li>
+            <li><code>log(x) - cos(x)</code></li>
+            <li><code>sqrt(x) + tan(x)</code></li>
+            <li><code>Abs(x) - 3</code></li>
+        </ul>
+    </div>
+
+    
+
+    <script src="{{ url_for('static', filename='js/script_jac.js') }}"></script>
+    </body>
+</html>

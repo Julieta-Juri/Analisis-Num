@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Calculadora de Métodos</title>
+
+  <!-- Estilos personalizados -->
+  <script src="../static/js/script_idioma.js"></script>
+  <script src="../static/js/script_bis.js"></script>
+  <link rel="stylesheet" href="../static/style.css">
+  <link rel="stylesheet" href="../static/style_gauss_jordan.css">
+  <link rel="stylesheet" href="../static/style_gauss_seidal.css">
+  <link rel="stylesheet" href="../static/style_secante.css">
+  <link rel="stylesheet" href="../static/style_newton.css">
+  <link rel="stylesheet" href="../static/estilo_jac.css">
+  <link rel="stylesheet" href="../static/estilo_reg.css">
+  <link rel="stylesheet" href="../static/style_bis.css">
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+
+<body class="bg-light">
+
+
+<!-- MENÚ SUPERIOR -->
+<nav class="menu">
+  <div class="container d-flex justify-content-between align-items-center py-2">
+    <div class="logo">MathInApp</div>
+    <div class="d-flex align-items-center gap-3">
+      <a id="link-nosotros" class="nosotros" href="{{url_for('nosotros')}}">Sobre nosotros</a>
+
+      <div>
+        <label for="idioma" class="me-2">Idioma:</label>
+        <select id="idioma" class="form-select form-select-sm d-inline-block w-auto">
+          <option value="es" selected>Español</option>
+          <option value="en">English</option>
+        </select>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+ <!-- TÍTULO -->
+ <div class="container text-center mt-5">
+  <h1 id="titulo" class="titulo">Calculadora de Métodos Científicos</h1> 
+</div>
+  <!-- CARDS DE MÉTODOS -->
+  <div class="container mt-4">
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+
+      <!-- Tarjeta Bisección -->
+      <div class="col">
+        <div class="card h-100 shadow-sm text-center">
+          <div class="card-body">
+            <h5 id="biseccion-titulo" class="card-title">Bisección</h5>
+            <a id="boton1" href="{{ url_for('biseccion1') }}" class="boton1">Ir al método</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tarjeta Regula Falsi -->
+      <div class="col">
+        <div class="card h-100 shadow-sm text-center">
+          <div class="card-body">
+            <h5 id="regula-falsi-titulo" class="card-title">Regula Falsi</h5>
+            <a id="boton2" href="{{ url_for('regula_falsi') }}" class="boton2">Ir al método</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tarjeta Gauss-Seidal -->
+      <div class="col">
+        <div class="card h-100 shadow-sm text-center">
+          <div class="card-body">
+            <h5 id="gauss-seidal-titulo"class="card-title">Gauss-Seidal</h5>
+            <a id="boton3" href="{{ url_for('gauss_seidal') }}" class="boton3">Ir al método</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tarjeta Jacobiano -->
+      <div class="col">
+        <div class="card h-100 shadow-sm text-center">
+          <div class="card-body">
+            <h5 id="jacobiano-titulo"class="card-title">Jacobiano</h5>
+            <a id="boton4" href="{{ url_for('jacobiano') }}" class="boton4">Ir al método</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tarjeta Gauss-Jordan -->
+      <div class="col">
+        <div class="card h-100 shadow-sm text-center">
+          <div class="card-body">
+            <h5 id="gauss-jordan-titulo"class="card-title">Gauss Jordan</h5>
+            <a id="boton5" href="{{ url_for('gauss_jordan') }}" class="boton5">Ir al método</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tarjeta Secante -->
+      <div class="col">
+        <div class="card h-100 shadow-sm text-center">
+          <div class="card-body">
+            <h5 id="secante-titulo"class="card-title">Secante</h5>
+            <a id="boton6"  href="{{ url_for('secante') }}" class="boton6">Ir al método</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tarjeta Newton-Raphson -->
+      <div class="col">
+        <div class="card h-100 shadow-sm text-center">
+          <div class="card-body">
+            <h5 id="newton-titulo"class="card-title">Newton-Raphson</h5>
+            <a id="boton7" href="{{ url_for('newton') }}" class="boton7">Ir al método</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- FOOTER opcional -->
+  <footer class="footer1 text-center mt-5 py-3 text-white">
+    <small>&copy; 2025 MathInApp. Todos los derechos reservados.</small>
+  </footer>
+  
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

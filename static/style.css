@@ -1,0 +1,112 @@
+.menu {
+    background-color: #393939; 
+    padding: 1rem 0;
+    color: white;
+  }
+  
+  
+  .menu .logo {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #FF5A09;
+    text-decoration: none;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    
+    
+    
+  }
+ /* Estilos para el enlace */
+.nosotros {
+    color:white; 
+    text-decoration: none;  
+    border: none;           /* Aseguramos que no haya bordes */
+    background-color: transparent; /* Eliminamos fondo */
+  }
+  
+  /* Estilo al pasar el ratón */
+  .nosotros:hover {
+    color: #FF5A09 ;  /* Color de texto naranja al hacer hover */
+    text-decoration: none;     /* Mantenemos sin subrayado */
+    background-color: transparent; /* Aseguramos que no aparezca un fondo */
+    border: none; /* Aseguramos que no aparezca un borde */
+  }
+  
+  /* body {
+    color: #e6d7d7;
+    animation: fadeIn 2s ease-in-out;
+    position: relative;
+    z-index: 0;
+  }
+  
+  body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('./img/banner.jpeg/fondo-matriz-azul-fondo-pantalla-codigo-binario-abstracto-plantilla-hackathon-otros-profesionales-digitales_87408-263.avif');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.3; /* ajustá la transparencia */
+    /* z-index: -1; */
+  /* }
+     */ 
+
+.titulo{
+    color: black; /* Blanco para el título */
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 4rem;
+    text-shadow: 1px 1px 2px rgba(150, 144, 144, 0.5);
+    animation: fadeIn 1.5s ease-in-out;
+    margin-top: 60px;
+    margin-bottom: 80px;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: transform(-20px); }
+    to { opacity: 1; transform: transform(0); }
+}
+
+
+a{
+    display: inline-block;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    background-color: white;
+    border:2px solid black;
+    border-radius: 10%;
+    padding: 30px;
+    margin-left: 5px;
+    margin-right: 5px;
+    transition: all 0.3s ease;
+
+}
+
+a:hover{
+    transform: scale(1.1);
+    text-decoration: underline;
+}
+
+.nav{
+    text-align: center;
+
+}
+.footer1 {
+  padding: 20px;
+  background-color: #393939;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+body{
+  margin: 0;
+  min-height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/style_newton.css">
+    <title>Newton-Raphson</title>
+</head>
+<body>
+    <header>
+        <h1>Metodo de Newton-Raphson</h1>
+        <a href="{{ url_for('index') }}" class="btn_atras">Atrás</a>
+    </header>
+    <div class="container">
+    <form method="POST" class="formulario">
+        <label for="funcion" class="label">Ingrese la función (en términos de x):</label><br>
+        <input type="text" id="funcion" name="funcion" class="input" required><br><br>
+
+        <label for="punto" class="label">Punto inicial (p0):</label><br>
+        <input type="number" step="any" id="punto" name="punto" class="input" required><br><br>
+
+        <label for="tolerancia" class="label">Tolerancia:</label><br>
+        <input type="number" step="any" id="tolerancia" name="tolerancia" value="1e-6" class="input" required><br><br>
+
+        <label for="max_iter" class="label">Máximas iteraciones:</label><br>
+        <input type="number" id="max_iter" name="max_iter" value="100" class="input" required><br><br>
+
+        <input type="submit" value="Calcular" class="btn_submit">
+
+    {% if funcion %}
+        <h2 class="h2_jinja">Función Ingresada:</h2>
+        <p class="numeros">{{ funcion }}</p>
+
+        <h2 class="h2_jinja">Derivada de la Función:</h2>
+        <p class="numeros">{{ derivada }}</p>
+
+        <h2 class="h2_jinja">Resultado:</h2>
+        {% if raiz %}
+            <h2 class="h2_jinja">Raíz encontrada: {{ raiz }}</h2>
+            <p style="color: red;" class="numeros">Error: {{ error }}</p>
+        {% else %}
+            <p class="numeros">{{ mensaje }}</p>
+        {% endif %}
+    {% endif %}
+
+    {% if grafico %}
+    <h2 class="h2_jinja">Gráfico de la Función:</h2>
+    <img src="data:image/png;base64,{{ grafico }}" alt="Gráfico de la función">
+{% endif %}
+
+    </form>
+
+    
+    </div>
+    <br>
+    <button id="mostrarNota" class="btn-nota">Guía</button>
+
+    <div id="notaImportante" class="nota">
+        <h3>📌 Guía de funciones</h3>
+        <p>Recordá escribir bien las funciones:</p>
+        <ul>
+            <li><strong>Seno:</strong> <code>sin(x)</code></li>
+            <li><strong>Coseno:</strong> <code>cos(x)</code></li>
+            <li><strong>Tangente:</strong> <code>tan(x)</code></li>
+            <li><strong>Exponencial:</strong> <code>exp(x)</code></li>
+            <li><strong>Logaritmo natural (ln):</strong> <code>log(x)</code></li>
+            <li><strong>Logaritmo base 10:</strong> <code>log10(x)</code></li>
+            <li><strong>Raíz cuadrada:</strong> <code>sqrt(x)</code></li>
+            <li><strong>Valor absoluto:</strong> <code>Abs(x)</code></li>
+            <li><strong>Potencia:</strong> <code>x**n</code> (por ejemplo: <code>x**2</code> para x al cuadrado)</li>
+        </ul>
+    
+        <h4>Importante:</h4>
+        <ul>
+            <li>Escribir CADA signo, siendo 3x, 3*x</li>
+            <li>Escribir siempre en términos de <strong>x</strong>.</li>
+            <li>Usar paréntesis correctamente.</li>
+            <li>No escribir <code>np.</code> ni otros prefijos.</li>
+            <li>Si la función involucra grados, convertir primero a radianes.</li>
+        </ul>
+    
+        <h4>Ejemplos válidos:</h4>
+        <ul>
+            <li><code>sin(x) + x**2</code></li>
+            <li><code>exp(x) - 5*x</code></li>
+            <li><code>log(x) - cos(x)</code></li>
+            <li><code>sqrt(x) + tan(x)</code></li>
+            <li><code>Abs(x) - 3</code></li>
+        </ul>
+    </div>
+
+    
+
+    <script src="{{ url_for('static', filename='js/script_new.js') }}"></script>
+</body>
+</html>

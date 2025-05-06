@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../static/style_secante.css">
+    <title>Método de la Secante</title>
+</head>
+<body>
+    <h1>Método de la Secante</h1>
+    <a href="{{ url_for('index') }}" class="btn_atras">Atrás</a>
+
+</header>
+<div class="container" >
+    <form method="post" class="formulario">
+        <label  class="label" for="funcion">Función (en x):</label>
+        <input type="text" id="funcion"  class="input" name="funcion" required>
+
+        <br><br>
+
+        <label class="label" for="punto0">Punto inicial 0:</label>
+        <input type="number" id="punto0" class="input" name="punto0" step="any" required>
+
+        <br><br>
+
+        <label class="label" for="punto1">Punto inicial 1:</label>
+        <input type="number" id="punto1" class="input" name="punto1" step="any" required>
+
+        <br><br>
+
+        <button type="submit" class="btn_submit">Calcular</button>
+
+        {% if funcion %}
+        <h3 class="h2_jinja">Función Ingresada:</h3>
+        <p class="numeros">{{ funcion }}</p>
+
+        {% if resultado %}
+            <h3 class="h2_jinja">Resultado:</h3>
+            <p class="numeros">Raíz encontrada: {{ resultado.raiz }}</p>
+            <p class="numeros">Error: {{ resultado.error }}</p>
+        {% elif error %}
+            <h3 class="h2_jinja">{{ error }}</h3>
+        {% endif %}
+    {% endif %}
+    </form>
+</div>
+
+<br>
+    <!-- mostrar  la guia  -->
+    <button id="mostrarNota" class="btn-nota">Guía</button>
+
+    <div id="notaImportante" class="nota">
+        <h3>📌 Guía de funciones</h3>
+    <p>El método de la secante se usa para encontrar raíces de funciones <code>f(x)</code>.</p>
+
+    <h4>📐 Fórmula utilizada:</h4>
+    <p>
+        <code>x_{n+1} = x_n - f(x_n) * (x_n - x_{n-1}) / (f(x_n) - f(x_{n-1}))</code>
+    </p>
+
+    <h4>✅ Requisitos:</h4>
+    <ul>
+        <li>Ingresar dos valores iniciales: <strong>x0</strong> y <strong>x1</strong>.</li>
+        <li>Definir la función <code>f(x)</code> correctamente (ver ejemplos abajo).</li>
+        <li>Especificar una <strong>tolerancia</strong> (por ejemplo: <code>1e-8</code>).</li>
+    </ul>
+
+    <h4>🧮 Cómo escribir funciones:</h4>
+    <ul>
+        <li><strong>Seno:</strong> <code>sin(x)</code></li>
+        <li><strong>Coseno:</strong> <code>cos(x)</code></li>
+        <li><strong>Tangente:</strong> <code>tan(x)</code></li>
+        <li><strong>Exponencial:</strong> <code>exp(x)</code></li>
+        <li><strong>Logaritmo natural (ln):</strong> <code>log(x)</code></li>
+        <li><strong>Logaritmo base 10:</strong> <code>log10(x)</code></li>
+        <li><strong>Raíz cuadrada:</strong> <code>sqrt(x)</code></li>
+        <li><strong>Valor absoluto:</strong> <code>Abs(x)</code></li>
+        <li><strong>Potencia:</strong> <code>x**n</code> (ej: <code>x**2</code> para x al cuadrado)</li>
+    </ul>
+
+    <h4>⚠️ Importante:</h4>
+    <ul>
+        <li>Escribir siempre en términos de <strong>x</strong>.</li>
+        <li>Usar paréntesis correctamente.</li>
+        <li>No escribir <code>np.</code> ni otros prefijos.</li>
+        <li>Si la función involucra grados, convertir primero a radianes.</li>
+    </ul>
+
+    <h4>💡 Ejemplos válidos:</h4>
+    <ul>
+        <li><code>x**2 - 4</code></li>
+        <li><code>sin(x) - x/2</code></li>
+        <li><code>exp(x) - 5</code></li>
+        <li><code>log(x) - cos(x)</code></li>
+        <li><code>sqrt(x) - 3</code></li>
+    </ul>
+</div>
+
+<script src="{{ url_for('static', filename='js/script_sec.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,227 @@
+.menu {
+    background-color: #393939; 
+    height: 120px;
+    padding: 0.5rem 0;
+    color: white;
+    height: auto;
+
+
+}
+
+.menu .logo {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #FF5A09;
+    text-decoration: none;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  }
+ /* Estilos para el enlace */
+.nosotros {
+    color:white; 
+    text-decoration: none;  
+    border: none;           /* Aseguramos que no haya bordes */
+    background-color: transparent; /* Eliminamos fondo */
+  }
+  
+  /* Estilo al pasar el ratón */
+  .nosotros:hover {
+    color: #FF5A09 ;  /* Color de texto naranja al hacer hover */
+    text-decoration: none;     /* Mantenemos sin subrayado */
+    background-color: transparent; /* Aseguramos que no aparezca un fondo */
+    border: none; /* Aseguramos que no aparezca un borde */
+  }
+  
+  body {
+    color: #e6d7d7;
+    animation: fadeIn 2s ease-in-out;
+    margin: 0;
+    min-height: 100vh;
+    height: 100%;
+    padding: 0;
+
+
+  }
+
+  
+.titulo{
+    color: black; /* Blanco para el título */
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 4rem;
+    text-shadow: 1px 1px 2px rgba(150, 144, 144, 0.5);
+    animation: fadeIn 1.5s ease-in-out;
+    margin-top: 60px;
+    margin-bottom: 80px;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+
+a{
+    display: inline-block;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    background-color: white;
+    border:2px solid black;
+    border-radius: 10%;
+    padding: 30px;
+    margin-left: 5px;
+    margin-right: 5px;
+    transition: all 0.3s ease;
+
+}
+
+a:hover{
+    transform: scale(1.1);
+    text-decoration: underline;
+}
+
+
+
+.footer1 {
+    padding: 20px;
+    background-color: #393939;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height:60px;
+}
+
+    .containerR {
+        margin-top: 60px;
+        margin-bottom: 60px;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 40px;
+    }
+
+    .principal {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-wrap: wrap; /* para que se acomode en pantallas chicas */
+        margin: 40px;
+        gap: 20px;
+        flex: 1;
+    }
+    
+    .content {
+        flex: 1;
+        min-width: 300px;
+    }
+    
+    #parte3 {
+        flex: 1;
+        min-width: 300px;
+        padding: 40px 20px; /* Espaciado interior */
+        background-color: #f9f9f9; /* Fondo suave para resaltar la sección */
+      }
+
+      #parte3 h2 {
+        font-size: 2rem; /* Tamaño del título */
+        margin-bottom: 20px; /* Espaciado debajo del título */
+        color: #FF5A09;/* Color oscuro para el título */
+      }
+
+      #parte3 .row {
+        margin-top: 30px;
+      }
+
+      #parte3 .col-md-6 {
+        padding: 15px;
+      }
+
+      #parte3 p {
+        font-size: 1.1rem;
+        line-height: 1.6; /* Interlineado para mayor legibilidad */
+        margin-bottom: 15px; /* Espaciado entre párrafos */
+        color: #555; /* Color de texto más suave */
+      }
+
+      #parte3 .ratio {
+        margin-top: 20px; /* Espaciado arriba del mapa */
+      }
+
+      #parte3 iframe {
+        border-radius: 10px; /* Bordes redondeados en el mapa */
+        width: 100%;
+        height: 100%;
+      }
+
+      @media (max-width: 768px) {
+        #parte3 h2 {
+          font-size: 1.5rem; /* Ajuste del título para pantallas pequeñas */
+        }
+
+        #parte3 p {
+          font-size: 1rem; /* Ajuste del texto para pantallas pequeñas */
+        }
+      }
+
+
+
+
+
+/* Columna izquierda: Compañía y Productos */
+.col-md-6 {
+    flex: 1;
+    min-width: 300px;
+    max-width: 600px;
+}
+
+/* Columna derecha: Dirección y mapa */
+.col-md-5 {
+    flex: 1;
+    min-width: 300px;
+    max-width: 500px;
+}
+
+/* Títulos */
+section h2,
+.col-md-5 h2 {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+    color: #FF5A09;
+    border-bottom: 2px solid #FF5A09;
+    padding-bottom: 8px;
+}
+
+/* Párrafos */
+section p,
+.col-md-5 p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Mapa */
+.ratio iframe {
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    width: 100%;
+    height: 100%;
+}
+.ratio {
+  position: relative;
+  width: 100%;
+  height: 200px;
+}
+
+/* Responsive padding */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .col-md-6, .col-md-5 {
+        max-width: 100%;
+    }
+}

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gauss-Jordan</title>
+    <link rel="stylesheet" href="../static/style_gauss_jordan.css">
+</head>
+<body>
+    <header>
+    <h1>Método de Gauss-Jordan</h1>
+    <a href="{{ url_for('index') }}" class="btn_atras">Atrás</a>
+    </header>
+    <div class="container">
+    {% if not cantidad %}
+    
+    <!-- Fase 1: Pedir cantidad de ecuaciones -->
+    
+    <form method="post" class="formulario">
+        <label for="cantidad" class="label">¿Cuántas ecuaciones tiene el sistema?</label>
+        <input type="number" id="cantidad" name="cantidad" required min="1" class="input">
+        <button type="submit" class="btn_submit">Continuar</button>
+    </form>
+
+    {% else %}
+    <!-- Fase 2: Pedir las ecuaciones -->
+    <form method="post" class="formulario">
+        <input type="hidden" name="cantidad" value="{{ cantidad }}">
+        
+        {% for i in range(cantidad) %}
+            <label for="ecuacion{{ i }}" class="label">Ecuación {{ i + 1 }}:</label>
+            <input type="text" id="ecuacion{{ i }}" name="ecuacion{{ i }}" required placeholder="Ej: 2x+3y=5" class="input">
+            <br><br>
+        {% endfor %}
+
+        <button type="submit" class="btn_submit">Resolver</button>
+        
+    {% endif %}
+    
+    {% if soluciones %}
+    <!-- Fase 3: Mostrar soluciones -->
+    <h2 class="h2_jinja">Soluciones:</h2>
+    <ul>
+        {% for sol in soluciones %}
+    <li class="numeros">Variable {{ loop.index }} = {{ sol }}</li>
+    {% endfor %}
+    </ul>
+    {% endif %}
+    </form>
+    </div>
+    <button id="mostrarNota" class="btn-nota">Guía</button>
+
+    <div id="notaImportante" class="nota">
+        <h3>📌 Guía de funciones</h3>
+        <p>Recordá escribir bien las funciones:</p>
+        <ul>
+            <li><strong>Seno:</strong> <code>sin(x)</code></li>
+            <li><strong>Coseno:</strong> <code>cos(x)</code></li>
+            <li><strong>Tangente:</strong> <code>tan(x)</code></li>
+            <li><strong>Exponencial:</strong> <code>exp(x)</code></li>
+            <li><strong>Logaritmo natural (ln):</strong> <code>log(x)</code></li>
+            <li><strong>Logaritmo base 10:</strong> <code>log10(x)</code></li>
+            <li><strong>Raíz cuadrada:</strong> <code>sqrt(x)</code></li>
+            <li><strong>Valor absoluto:</strong> <code>Abs(x)</code></li>
+            <li><strong>Potencia:</strong> <code>x**n</code> (por ejemplo: <code>x**2</code> para x al cuadrado)</li>
+        </ul>
+    
+        <h4>Importante:</h4>
+        <ul>
+            <li>Escribir CADA signo, siendo 3x, 3*x</li>
+            <li>Escribir siempre en términos de <strong>x</strong>.</li>
+            <li>Usar paréntesis correctamente.</li>
+            <li>No escribir <code>np.</code> ni otros prefijos.</li>
+            <li>Si la función involucra grados, convertir primero a radianes.</li>
+        </ul>
+    
+        <h4>Ejemplos válidos:</h4>
+        <ul>
+            <li><code>sin(x) + x**2</code></li>
+            <li><code>exp(x) - 5*x</code></li>
+            <li><code>log(x) - cos(x)</code></li>
+            <li><code>sqrt(x) + tan(x)</code></li>
+            <li><code>Abs(x) - 3</code></li>
+        </ul>
+    </div>
+    <script src="{{ url_for('static', filename='js/script_gauss_jordan.js') }}"></script>
+</body>
+</html>

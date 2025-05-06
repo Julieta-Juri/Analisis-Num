@@ -1,0 +1,74 @@
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="MathInApp es una herramienta para resolver métodos numéricos de manera clara y rápida.">
+    <link rel="stylesheet" href="../static/style_nosotros.css">
+    <script src="../static/js/script_idioma2.js"></script>
+
+    <title>Nosotros</title>
+    <!-- Enlaza tu hoja de estilos -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <nav class="menu">
+        <div class="container d-flex justify-content-between align-items-center py-2">
+            <div class="logo">MathInApp</div>
+            <div class="d-flex align-items-center gap-3">
+            <a id="link-nosotros" class="nosotros" href="{{url_for('index')}}">Inicio</a>
+            <div>
+                <label for="idioma" class="me-2">Idioma:</label>
+                    <select id="idioma" class="form-select form-select-sm d-inline-block w-auto">
+                    <option value="es" selected>Español</option>
+                    <option value="en">English</option>
+                </select>
+            </div>
+            </div>
+        </div>
+        </nav>
+<div >
+<div class="principal">
+    <div class="content">
+    <section id="parte1">
+        <h2 id="titulo">Compañía</h2>
+        <p id="descripcion1">Fundada en 2024, MathInApp es una iniciativa desarrollada por un equipo de estudiantes apasionados por las ciencias exactas y la programación. Nuestro objetivo es facilitar el acceso a herramientas que ayuden a resolver métodos numéricos de manera clara, rápida y gratuita.</p>
+    </section>
+
+    <section id="parte2">
+        <h2 id="titulo2">Productos</h2>
+        <p id="descripcion2">Nuestra calculadora científica está potenciada por una combinación de programación matemática y diseño intuitivo. MathInApp permite resolver problemas paso a paso, simulando el acompañamiento de un profesor, y está pensada para estudiantes de nivel secundario y universitario.</p>
+    </section>
+    </div>
+<!-- SECCIÓN DIRECCIÓN -->
+<section id="parte3" class="containerR mt-5 mb-5">
+    <h2 id="titulo1" class="text-center mb-4">Dirección</h2>
+    <div class="row">
+        <div class="col-md-6">
+            
+            <p id="titulo11" ><strong>Dirección:</strong></p><br>
+            <p  >España 782<br>
+            Salta Capital<br>
+            Argentina
+            </p>
+            <p><strong>Teléfono:</strong> +54 387 400-1234</p>
+        </div>
+        <div class="col-md-6">
+            <div class="ratio ratio-16x9">
+                <iframe 
+                    src="https://www.google.com/maps?q=España+782,+Salta,+Argentina&output=embed" 
+                    allowfullscreen 
+                    loading="lazy"
+                    style="border:0" 
+                    title="Mapa de España 782, Salta, Argentina">
+                </iframe>
+            </div>
+        </div>
+    </div>
+</section>
+</div>
+<footer class="footer1 text-center mt-5 py-3 text-white">
+    <small>&copy; 2025 MathInApp. Todos los derechos reservados.</small>
+</footer>
+</div>
+</body>
+</html>
